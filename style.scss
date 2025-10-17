@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin all-center($direction: '') {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: rgb(23, 23, 22);
+}
+
+main {
+  @include all-center(rows);
+  height: 100%;
+  width: 100%;
+  border-radius: 28px;
+  gap: 2rem;
+  padding: 1rem;
+  color: white;
+  display: flex;
+
+  form {
+    @include all-center(column)
+  }
+
+  input {
+    margin-bottom: 8px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid rgb(74, 56, 212);
+  }
+
+  input:nth-last-child(1) {
+    background-color: rgb(74, 56, 212);
+    border: 2px solid white;
+    color: white;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-top: 8px;
+    transition: all .3s ease;
+  }
+  input:nth-last-child(1):hover {
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(74, 56, 212);
+    color: rgb(74, 56, 212);
+
+  }
+
+  .card {
+    width: clamp(200px, 80vw, 300px);
+    background-color: rgb(74, 56, 212);
+    border: 2px solid white;
+    color: white;
+    border-radius: 20px;
+    @include all-center(column);
+    padding: 14px;
+    gap: 1rem;
+    text-align: center;
+    line-height: 1;
+    
+    #img {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 2px solid white;
+    }
+    
+    img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+}
