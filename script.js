@@ -6,6 +6,7 @@ let main = document.querySelector('main');
 
 let heading = document.querySelector('#heading');
 heading.style.marginBottom = '16px';
+heading.style.textAlign = 'center';
 
 form.addEventListener('submit', function (dtls) {
     dtls.preventDefault();
